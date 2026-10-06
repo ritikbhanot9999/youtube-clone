@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Clone</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 100px;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .search-box {
+      width: 40%;
+      padding: 8px 15px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .icons i {
+      margin-left: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 200px;
+      height: calc(100vh - 60px);
+      background-color: #fff;
+      padding: 20px 10px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .sidebar i {
+      margin-right: 10px;
+    }
+
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Main */
+    .main {
+      margin-left: 200px;
+      margin-top: 60px;
+      padding: 20px;
+      width: calc(100% - 200px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .video-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-card img.thumbnail {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video-info {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .channel-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .video-details h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .video-details p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .search-box {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-box {
+        display: none;
+      }
+
+      .icons i {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="youtube.html" alt="YouTube Logo">
+    </div>
+    <input type="text" placeholder="Search..." class="search-box">
+    <div class="icons">
+      <i class="material-icons">videocam</i>
+      <i class="material-icons">notifications</i>
+      <i class="material-icons">account_circle</i>
+    </div>
+  </header>
+
+  <!-- Sidebar and Main -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="#"><i class="material-icons">home</i>Home</a>
+      <a href="#"><i class="material-icons">whatshot</i>Trending</a>
+      <a href="#"><i class="material-icons">subscriptions</i>Subscriptions</a>
+      <a href="#"><i class="material-icons">music_note</i>Music</a>
+      <a href="#"><i class="material-icons">sports_esports</i>Gaming</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Video Cards -->
+      <div class="video-card">
+        <img class="thumbnail" src="harsh.thumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="harshchannelphto.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>A DAY IN PAKISTAN GERNAL</h4>
+            <p>Harsh Beniwal • 1.2M views • 1 week ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img class="thumbnail" src="bbkivinethumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="bbkivinelogo.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>DIN HAGNA DA</h4>
+            <p>BB Ki Vines • 800K views • 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+       <div class="video-card">
+        <img class="thumbnail" src="bbkivinethumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="bbkivinelogo.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>DIN HAGNA DA</h4>
+            <p>BB Ki Vines • 800K views • 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+
+ <div class="video-card">
+        <img class="thumbnail" src="bbkivinethumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="bbkivinelogo.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>DIN HAGNA DA</h4>
+            <p>BB Ki Vines • 800K views • 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+       <div class="video-card">
+        <img class="thumbnail" src="bbkivinethumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="bbkivinelogo.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>DIN HAGNA DA</h4>
+            <p>BB Ki Vines • 800K views • 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="video-card">
+        <img class="thumbnail" src="carry.thumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="carrychannelphoto.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>SAAS BAHU AUR SAANP</h4>
+            <p>CarryMinati • 3.4M views • 4 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img class="thumbnail" src="purav.2.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="puravchannellogo.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>NEW HOME TOUR WORTH 6 CR</h4>
+            <p>Purav Jha • 560K views • 19 hours ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img class="thumbnail" src="sourav.thumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="souravchannelphoto.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>Piyush vs Kunal Fun Challenge</h4>
+            <p>Sourav Joshi Vlogs • 2.1M views • 14 hours ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img class="thumbnail" src="mythpat.thumbnail.jpg" alt="Video Thumbnail">
+        <div class="video-info">
+          <img class="channel-logo" src="mythpatcghannelphoto.jpg" alt="Channel Logo">
+          <div class="video-details">
+            <h4>I CAN'T SURVIVE GTA FOR AN HOUR</h4>
+            <p>Mythpat • 1.8M views • 2 days ago</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
+
+

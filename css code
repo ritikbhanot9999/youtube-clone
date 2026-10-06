@@ -1,0 +1,49 @@
+, <style>
+        .thumbnail  {
+       width: 300px;
+        display: block;
+        }
+
+        .search-bar
+        
+        {
+            display: block;
+
+        }
+
+       
+
+        .video-preview
+        
+        
+        
+        {
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+       
+        .channel.picture {
+            display: inline-block;
+         width: 200px;
+        }
+
+
+
+        .profile-picture 
+        
+        {
+           
+            width: 36px;
+            
+        }
+       
+
+        .video-info {
+            display: inline-block;
+            width: 200px;
+        }
+
+        </style>
